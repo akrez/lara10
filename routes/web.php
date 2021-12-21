@@ -13,3 +13,6 @@
 
 Route::get('/', 'SiteController@indexAction')->name('home');
 Route::get('/site/test', 'SiteController@testAction')->name('test')->middleware('check.blog');
+
+Route::get('/post', 'PostController@indexAction')->name('post.index');
+Route::get('/post/{id}', 'PostController@viewAction')->name('post.view');
