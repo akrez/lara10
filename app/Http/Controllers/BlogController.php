@@ -39,4 +39,11 @@ class BlogController extends Controller
         $blog->save();
         return redirect()->route('blog.view', ['id' => $id]);
     }
+
+    public function deleteAction($id, Request $request)
+    {
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+        return redirect()->route('blog.index');
+    }
 }

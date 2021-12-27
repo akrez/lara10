@@ -14,6 +14,7 @@
                     <p class="card-text"></p>
                     <a href="{{ route('blog.view', ['id' => $blog->id ]) }}" class="card-link"><i class="fa fa-anchor"></i></a>
                     <a href="{{ route('blog.edit', ['id' => $blog->id ]) }}" class="card-link"><i class="fa fa-edit"></i></a>
+                    <a href="{{ route('blog.delete', ['id' => $blog->id ]) }}" class="card-link"><i class="fa fa-trash"></i></a>
                 </div>
             </div>
         </div>
