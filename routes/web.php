@@ -17,5 +17,7 @@ Route::get('/site/test', 'SiteController@testAction')->name('test')->middleware(
 Route::get('/post', 'PostController@indexAction')->name('post.index');
 Route::get('/post/{id}', 'PostController@viewAction')->name('post.view');
 
-Route::get('/blogs', 'BlogController@indexAction')->name('blog.index');
+Route::get('/blog', 'BlogController@indexAction')->name('blog.index');
 Route::get('/blog/{id}', 'BlogController@viewAction')->name('blog.view');
+Route::get('/blog/{id}/edit', 'BlogController@editAction')->name('blog.edit');
+Route::post('/blog/{id}/store', 'BlogController@storeAction')->name('blog.store');
