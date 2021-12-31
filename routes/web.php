@@ -22,3 +22,5 @@ Route::get('/blog/{id}', 'BlogController@viewAction')->name('blog.view');
 Route::get('/blog/{id}/edit', 'BlogController@editAction')->name('blog.edit');
 Route::post('/blog/{id}/store', 'BlogController@storeAction')->name('blog.store');
 Route::get('/blog/{id}/delete', 'BlogController@deleteAction')->name('blog.delete');
+
+Route::post('/blog-comment/{blog_id}/store', 'BlogCommentController@storeAction')->name('blogComment.store');
