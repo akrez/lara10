@@ -29,14 +29,26 @@ class BlogController extends Controller
         ]);
     }
 
-    public function storeAction($id, Request $request)
+    public function storeAction(Request $request)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = new Blog();
         $blog->title = $request->title;
         $blog->abstract = $request->abstract;
         $blog->content = $request->content;
         $blog->img_url = $request->img_url;
         $blog->save();
+        return redirect()->route('blog.index');
+    }
+
+    public function updateAction($id, Request $request)
+    {
+        $blog = Blog::findOrFail($id);
+        $blog->update([
+            'title' => $request->title,
+            'abstract' => $request->abstract,
+            'content' => $request->content,
+            'img_url' => $request->img_url,
+        ]);
         return redirect()->route('blog.view', ['id' => $id]);
     }
 
