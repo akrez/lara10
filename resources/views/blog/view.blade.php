@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-3">
-        <img src="{{ $blog->img_url }}">
+        <img class="img-fluid" src="{{ $blog->img_url }}">
     </div>
     <div class="col-md-9">
         {{ $blog->content }}
