@@ -11,13 +11,15 @@
 |
 */
 
+use App\Http\Controllers\BlogController;
+
 Route::get('/', 'SiteController@indexAction')->name('home');
 Route::get('/site/test', 'SiteController@testAction')->name('test')->middleware('check.blog');
 
 Route::get('/post', 'PostController@indexAction')->name('post.index');
 Route::get('/post/{id}', 'PostController@viewAction')->name('post.view');
 
-Route::get('/blog', 'BlogController@indexAction')->name('blog.index');
+Route::get('/blog', [BlogController::class, 'indexAction'])->name('blog.index');
 Route::get('/blog/{id}', 'BlogController@viewAction')->name('blog.view');
 Route::post('/blog/store', 'BlogController@storeAction')->name('blog.store');
 Route::get('/blog/{id}/edit', 'BlogController@editAction')->name('blog.edit');
