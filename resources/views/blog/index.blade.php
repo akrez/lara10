@@ -19,6 +19,8 @@
 </div>
 @endforeach
 
+{{ $blogs->onEachSide(3)->links() }}
+
 <form action="{{ route('blog.store') }}" method="POST">
     {{ csrf_field() }}
     <div class="form-group">
@@ -40,4 +42,5 @@
     <button type="submit" class="btn btn-primary mb-2">Submit</button>
 </form>
 
+{{ dump($blogs)  }}
 @endsection

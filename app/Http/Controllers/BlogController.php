@@ -10,7 +10,7 @@ class BlogController extends Controller
     public function indexAction()
     {
         return view('blog.index', [
-            'blogs' => Blog::get(),
+            'blogs' => Blog::query()->paginate(5),
         ]);
     }
 
