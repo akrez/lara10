@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content-header')
-<h1 class="m-0">داشبورد</h1>
+<h1 class="m-0">{{ __('messages.welcome',['name' => 'Akbar']) }}</h1>
 @endsection()
 
 @section('content')
